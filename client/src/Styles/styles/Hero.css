@@ -1,0 +1,246 @@
+/* Base Styles */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    z-index: -2;
+  }
+  
+  .hero-background::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to top, #f6f7fb 0%, transparent 100%);
+  }
+  
+  .hero-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  /* Typography */
+  .hero-headline {
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .highlight {
+    color: #fbbf24;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background-color: rgba(251, 191, 36, 0.3);
+    z-index: -1;
+    transform: skewX(-15deg);
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Search Form */
+  .search-form {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 900px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #1f2937;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+  
+  .select-wrapper {
+    position: relative;
+  }
+  
+  .select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #6b7280;
+    pointer-events: none;
+  }
+  
+  /* Search Button */
+  .search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+  }
+  
+  .search-button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+  }
+  
+  .button-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+  
+  /* Car Image */
+  .hero-car-image {
+    margin-top: 3rem;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-car {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+  }
+  
+  .image-reflection {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 100%);
+    transform: scaleY(-1);
+    opacity: 0.5;
+    filter: blur(5px);
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    
+    .search-form {
+      padding: 1.5rem;
+    }
+    
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .floating-car {
+      max-height: 300px;
+    }
+  }

@@ -1,0 +1,564 @@
+[
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2022,
+    "type": "sedan",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Toyota Camry Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 45,
+      "weeklyRate": 250,
+      "monthlyRate": 900,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-10T00:00:00Z",
+      "availableUntil": "2026-08-10T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "I4",
+        "displacement": "2.5L",
+        "horsepower": 203
+      },
+      "transmission": "automatic",
+      "fuelType": "gasoline",
+      "fuelEconomy": {
+        "city": 28,
+        "highway": 39,
+        "combined": 32
+      },
+      "drivetrain": "fwd"
+    },
+    "dimensions": {
+      "seats": 5,
+      "doors": 4,
+      "luggage": 15.1
+    },
+    "features": {
+      "safety": {
+        "airbags": true,
+        "abs": true,
+        "stabilityControl": true,
+        "tractionControl": true,
+        "blindSpotMonitoring": true,
+        "laneDepartureWarning": true,
+        "collisionWarning": true
+      },
+      "comfort": {
+        "airConditioning": true,
+        "heatedSeats": false,
+        "leatherSeats": false,
+        "cooledSeats": false,
+        "sunroof": false,
+        "powerWindows": true,
+        "powerLocks": true,
+        "cruiseControl": true
+      },
+      "technology": {
+        "bluetooth": true,
+        "gps": false,
+        "rearCamera": true,
+        "wifi": false,
+        "dashCamera": false,
+        "touchScreen": true,
+        "appleCarPlay": true,
+        "androidAuto": true,
+        "usbPorts": 2,
+        "wirelessCharging": false
+      }
+    },
+    "location": {
+      "address": "456 Broadway",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10002"
+    },
+    "description": "Reliable and fuel-efficient sedan perfect for city driving.",
+    "condition": "excellent",
+    "mileage": 15000,
+    "licensePlate": "CAM-2022",
+    "status": "active"
+  },
+  {
+    "make": "Ford",
+    "model": "Mustang",
+    "year": 2023,
+    "type": "coupe",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Ford Mustang Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 95,
+      "weeklyRate": 550,
+      "monthlyRate": 2000,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "V8",
+        "displacement": "5.0L",
+        "horsepower": 450
+      },
+      "transmission": "manual",
+      "fuelType": "gasoline",
+      "fuelEconomy": {
+        "city": 15,
+        "highway": 24,
+        "combined": 18
+      },
+      "drivetrain": "rwd"
+    },
+    "dimensions": {
+      "seats": 4,
+      "doors": 2,
+      "luggage": 11.4
+    },
+    "location": {
+      "address": "123 Main St",
+      "city": "Detroit",
+      "state": "MI",
+      "zipCode": "48201"
+    },
+    "description": "Iconic American muscle car with powerful V8 engine.",
+    "condition": "new",
+    "mileage": 5000,
+    "licensePlate": "MUS-TANG",
+    "status": "active"
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2023,
+    "type": "sedan",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Tesla Model 3 Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 85,
+      "weeklyRate": 500,
+      "monthlyRate": 1800,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "Electric",
+        "horsepower": 283
+      },
+      "transmission": "automatic",
+      "fuelType": "electric",
+      "fuelEconomy": {
+        "city": 132,
+        "highway": 126,
+        "combined": 129
+      },
+      "drivetrain": "awd"
+    },
+    "location": {
+      "address": "789 Tech Ave",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipCode": "94102"
+    },
+    "description": "Premium electric vehicle with autopilot capabilities.",
+    "condition": "excellent",
+    "mileage": 8000,
+    "licensePlate": "TES-LA3",
+    "status": "active"
+  },
+  {
+    "make": "Jeep",
+    "model": "Wrangler",
+    "year": 2021,
+    "type": "suv",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Jeep Wrangler Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 75,
+      "weeklyRate": 400,
+      "monthlyRate": 1500,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "V6",
+        "displacement": "3.6L",
+        "horsepower": 285
+      },
+      "transmission": "automatic",
+      "fuelType": "gasoline",
+      "fuelEconomy": {
+        "city": 17,
+        "highway": 23,
+        "combined": 19
+      },
+      "drivetrain": "4wd"
+    },
+    "location": {
+      "address": "456 Mountain Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zipCode": "80202"
+    },
+    "description": "Legendary off-road capability with removable roof and doors.",
+    "condition": "good",
+    "mileage": 25000,
+    "licensePlate": "JEEP-4WD",
+    "status": "active"
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2022,
+    "type": "sedan",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Honda Civic Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 40,
+      "weeklyRate": 220,
+      "monthlyRate": 800,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "I4",
+        "displacement": "2.0L",
+        "horsepower": 158
+      },
+      "transmission": "automatic",
+      "fuelType": "gasoline",
+      "fuelEconomy": {
+        "city": 30,
+        "highway": 38,
+        "combined": 33
+      },
+      "drivetrain": "fwd"
+    },
+    "location": {
+      "address": "789 Oak St",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": "90210"
+    },
+    "description": "Compact and efficient with excellent reliability.",
+    "condition": "excellent",
+    "mileage": 12000,
+    "licensePlate": "CIV-IC22",
+    "status": "active"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Suburban",
+    "year": 2022,
+    "type": "suv",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Chevrolet Suburban Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 110,
+      "weeklyRate": 650,
+      "monthlyRate": 2400,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "V8",
+        "displacement": "5.3L",
+        "horsepower": 355
+      },
+      "transmission": "automatic",
+      "fuelType": "gasoline",
+      "fuelEconomy": {
+        "city": 15,
+        "highway": 19,
+        "combined": 16
+      },
+      "drivetrain": "rwd"
+    },
+    "location": {
+      "address": "123 Family Ave",
+      "city": "Houston",
+      "state": "TX",
+      "zipCode": "77001"
+    },
+    "description": "Full-size SUV with massive cargo space and towing capacity.",
+    "condition": "good",
+    "mileage": 18000,
+    "licensePlate": "SUB-URB",
+    "status": "active"
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "E-Class",
+    "year": 2023,
+    "type": "sedan",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Mercedes E-Class Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 130,
+      "weeklyRate": 800,
+      "monthlyRate": 3000,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "I6",
+        "displacement": "3.0L",
+        "horsepower": 362
+      },
+      "transmission": "automatic",
+      "fuelType": "hybrid",
+      "fuelEconomy": {
+        "city": 24,
+        "highway": 30,
+        "combined": 26
+      },
+      "drivetrain": "awd"
+    },
+    "location": {
+      "address": "456 Luxury Blvd",
+      "city": "Miami",
+      "state": "FL",
+      "zipCode": "33101"
+    },
+    "description": "Luxury sedan with premium interior and advanced tech.",
+    "condition": "new",
+    "mileage": 3000,
+    "licensePlate": "MB-E300",
+    "status": "active"
+  },
+  {
+    "make": "Nissan",
+    "model": "Rogue",
+    "year": 2023,
+    "type": "suv",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Nissan Rogue Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 55,
+      "weeklyRate": 300,
+      "monthlyRate": 1100,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "I4",
+        "displacement": "1.5L",
+        "horsepower": 201
+      },
+      "transmission": "automatic",
+      "fuelType": "gasoline",
+      "fuelEconomy": {
+        "city": 30,
+        "highway": 37,
+        "combined": 33
+      },
+      "drivetrain": "awd"
+    },
+    "location": {
+      "address": "789 Suburban Dr",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zipCode": "85001"
+    },
+    "description": "Compact SUV with great fuel economy and modern features.",
+    "condition": "new",
+    "mileage": 2000,
+    "licensePlate": "ROG-UE23",
+    "status": "active"
+  },
+  {
+    "make": "Porsche",
+    "model": "911",
+    "year": 2023,
+    "type": "coupe",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Porsche 911 Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 250,
+      "weeklyRate": 1400,
+      "monthlyRate": 5000,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "H6",
+        "displacement": "3.0L",
+        "horsepower": 379
+      },
+      "transmission": "automatic",
+      "fuelType": "gasoline",
+      "fuelEconomy": {
+        "city": 18,
+        "highway": 24,
+        "combined": 20
+      },
+      "drivetrain": "awd"
+    },
+    "location": {
+      "address": "123 Sports Car Ln",
+      "city": "Las Vegas",
+      "state": "NV",
+      "zipCode": "89101"
+    },
+    "description": "Iconic sports car with precision handling and performance.",
+    "condition": "new",
+    "mileage": 1000,
+    "licensePlate": "911-PRS",
+    "status": "active"
+  },
+  {
+    "make": "Toyota",
+    "model": "Sienna",
+    "year": 2022,
+    "type": "minivan",
+    "ownerId": "test-owner-123",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "alt": "Toyota Sienna Front View",
+        "isPrimary": true
+      }
+    ],
+    "pricing": {
+      "dailyRate": 65,
+      "weeklyRate": 350,
+      "monthlyRate": 1300,
+      "currency": "USD"
+    },
+    "availability": {
+      "isAvailable": true,
+      "availableFrom": "2025-08-16T00:00:00Z",
+      "availableUntil": "2026-08-16T00:00:00Z",
+      "unavailableDates": []
+    },
+    "specifications": {
+      "engine": {
+        "type": "V6",
+        "displacement": "3.5L",
+        "horsepower": 296
+      },
+      "transmission": "automatic",
+      "fuelType": "hybrid",
+      "fuelEconomy": {
+        "city": 36,
+        "highway": 36,
+        "combined": 36
+      },
+      "drivetrain": "fwd"
+    },
+    "location": {
+      "address": "456 Family Way",
+      "city": "Seattle",
+      "state": "WA",
+      "zipCode": "98101"
+    },
+    "description": "Spacious hybrid minivan perfect for family trips.",
+    "condition": "excellent",
+    "mileage": 10000,
+    "licensePlate": "SIEN-NA",
+    "status": "active"
+  }
+]

@@ -1,0 +1,314 @@
+.social-media-integration {
+  margin: 1rem 0;
+}
+
+.social-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.share-icon {
+  font-size: 1.2rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.social-modal {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.social-content {
+  padding: 1.5rem;
+}
+
+.share-preview {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+.share-preview h4 {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  font-weight: 600;
+}
+
+.share-text {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.social-content h4 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.platform-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-btn:hover {
+  border-color: var(--platform-color);
+  background: var(--platform-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.platform-btn:hover .platform-action {
+  opacity: 1;
+}
+
+.platform-icon {
+  font-size: 2rem;
+}
+
+.platform-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.platform-action {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.additional-actions {
+  margin-bottom: 2rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.action-btn:hover {
+  border-color: #667eea;
+  background: #667eea;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.collaboration-section {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+}
+
+.collab-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.collab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-align: left;
+}
+
+.collab-btn:hover {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  transform: translateX(5px);
+}
+
+.collab-btn span:first-child {
+  font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .social-modal {
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  .platforms-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .platform-btn {
+    padding: 0.75rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    justify-content: center;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .social-modal {
+    background: #1f2937;
+    color: white;
+  }
+  
+  .modal-header {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+    border-bottom-color: #374151;
+  }
+  
+  .modal-header h3 {
+    color: white;
+  }
+  
+  .share-preview {
+    background: #374151;
+    color: #d1d5db;
+  }
+  
+  .platform-btn,
+  .action-btn,
+  .collab-btn {
+    background: #374151;
+    border-color: #4b5563;
+    color: #d1d5db;
+  }
+  
+  .platform-btn:hover,
+  .action-btn:hover,
+  .collab-btn:hover {
+    color: white;
+  }
+}

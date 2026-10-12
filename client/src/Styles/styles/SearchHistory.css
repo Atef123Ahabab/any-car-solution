@@ -1,0 +1,146 @@
+.search-history-container {
+  position: relative;
+  display: inline-block;
+}
+
+.history-toggle-btn {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.history-toggle-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.search-history-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 350px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.history-header h4 {
+  margin: 0;
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.close-history-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-history-btn:hover {
+  color: #333;
+}
+
+.history-loading {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.no-history {
+  padding: 20px;
+  text-align: center;
+}
+
+.no-history p {
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+.history-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.history-item:hover {
+  background-color: #f8f9fa;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-query {
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.history-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.filter-tag {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.results-count {
+  background: rgba(0, 0, 0, 0.05);
+  color: #666;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+
+.history-date {
+  color: #888;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .search-history-dropdown {
+    width: 280px;
+    right: -50px;
+  }
+}

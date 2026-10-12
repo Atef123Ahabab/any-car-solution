@@ -1,0 +1,64 @@
+.lazy-image-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.image-skeleton {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skeleton-shimmer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.lazy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.lazy-image.loading {
+  opacity: 0;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* Responsive skeleton heights */
+@media (max-width: 768px) {
+  .image-skeleton {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-skeleton {
+    min-height: 120px;
+  }
+}

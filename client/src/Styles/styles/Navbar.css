@@ -1,0 +1,260 @@
+/* Navbar.css */
+
+/* Base Styles */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo Styles */
+.logo-link {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+}
+
+/* Menu Links Styles */
+.menu-links {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 1rem;
+}
+
+.menu-link {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4f46e5;
+  transition: width 0.3s ease;
+}
+
+.menu-link:hover {
+  color: #4f46e5;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+/* Search Bar Styles */
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 400px;
+  margin: 0 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px 0 0 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.search-button {
+  padding: 0.6rem 1rem;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #4338ca;
+}
+
+.search-icon {
+  height: 1.2rem;
+  width: 1.2rem;
+  color: white;
+}
+
+/* Action Buttons Styles */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 0.5rem;
+}
+
+.user-email {
+  font-size: 0.9rem;
+  color: #4f46e5;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.user-email:hover {
+  color: #4338ca;
+  text-decoration: underline;
+}
+
+.user-type-badge {
+  font-size: 0.7rem;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  margin-top: 0.2rem;
+}
+
+/* Button Styles */
+.login-button,
+.dashboard-button,
+.logout-button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+}
+
+.login-button:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+}
+
+.dashboard-button {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  border: none;
+}
+
+.dashboard-button:hover {
+  background-color: #c7d2fe;
+  transform: translateY(-1px);
+}
+
+.logout-button {
+  background-color: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+.logout-button:hover {
+  background-color: #fee2e2;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .menu-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin: 1rem 0 0 0;
+  }
+  
+  .search-container {
+    order: 2;
+    max-width: 300px;
+    margin: 0.5rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+  }
+  
+  .logo-link {
+    margin-bottom: 1rem;
+  }
+  
+  .menu-links {
+    order: 2;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+  
+  .search-container {
+    order: 3;
+    width: 90%;
+    max-width: none;
+    margin: 0.5rem 0;
+  }
+  
+  .action-buttons {
+    order: 4;
+    margin-top: 1rem;
+  }
+  
+  .user-info {
+    display: none;
+  }
+}
+
+/* Animation Enhancements */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Focus States for Accessibility */
+button:focus, .menu-link:focus, .search-input:focus, .user-email:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}

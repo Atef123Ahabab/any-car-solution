@@ -1,0 +1,375 @@
+/* Desktop-Optimized Car Card */
+.car-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  max-width: var(--car-image-width-lg);
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+/* Professional Price Tag */
+.price-tag {
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover));
+  color: white;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  z-index: 10;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.025em;
+}
+
+.car-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: auto;
+  padding-top: var(--space-md);
+}
+
+/* Professional Image Container */
+.car-image-container {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  background: var(--bg-tertiary);
+}
+
+.car-image {
+  width: 100%;
+  height: var(--car-image-height-md);
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  aspect-ratio: var(--car-image-aspect-ratio);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  display: block;
+}
+
+/* Desktop-Optimized Book Now Button */
+.book-now-btn {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-secondary-hover));
+  color: white;
+  border: none;
+  padding: var(--space-2xl) var(--space-3xl);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  width: 100%;
+  margin-top: auto;
+  box-shadow: var(--shadow-md);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  min-height: var(--desktop-button-height);
+}
+
+.rent-btn, .details-btn {
+  flex: 1;
+  padding: var(--button-padding-md);
+  height: var(--button-height-md);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: var(--button-font-size-md);
+  text-decoration: none;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.book-now-btn:hover {
+  background: linear-gradient(135deg, var(--accent-secondary-hover), #065f46);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.book-now-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.book-now-btn:hover::before {
+  left: 100%;
+}
+
+.car-card:hover .car-image {
+  transform: scale(1.03);
+}
+
+/* Loading State */
+.image-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  z-index: 1;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* No Image Placeholder */
+.no-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.no-image-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.7;
+}
+
+.no-image-placeholder p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.car-content {
+  padding: var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.car-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.car-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  flex: 1;
+}
+
+.car-year {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.car-specs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.car-specs span {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.car-location {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.car-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.star {
+  color: #fbbf24;
+  font-size: 14px;
+}
+
+.star.empty {
+  color: #d1d5db;
+}
+
+.rating-count {
+  font-size: 12px;
+  color: #6b7280;
+  margin-left: 4px;
+}
+
+.car-condition {
+  margin-bottom: 12px;
+}
+
+.condition-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+}
+
+/* Desktop-First Responsive Design */
+@media (min-width: 1440px) {
+  .car-card {
+    max-width: var(--car-image-width-lg);
+  }
+  
+  .car-image {
+    height: var(--car-image-height-lg);
+  }
+  
+  .rent-btn, .details-btn {
+    padding: var(--desktop-button-padding);
+    height: var(--desktop-button-height);
+    font-size: var(--desktop-font-size-base);
+  }
+}
+
+@media (max-width: 1200px) {
+  .car-card {
+    max-width: 380px;
+  }
+  
+  .price-tag {
+    font-size: var(--text-sm);
+    padding: var(--space-sm) var(--space-lg);
+  }
+  
+  .book-now-btn {
+    padding: var(--space-xl) var(--space-2xl);
+    font-size: var(--text-base);
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .car-card {
+    max-width: 100%;
+  }
+  
+  .car-image {
+    height: var(--car-image-height-sm);
+  }
+  
+  .car-content {
+    padding: var(--space-md);
+  }
+  
+  .rent-btn, .details-btn {
+    padding: var(--button-padding-sm);
+    height: var(--button-height-sm);
+    font-size: var(--button-font-size-sm);
+  }
+  
+  .car-actions {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  
+  .price-tag {
+    font-size: var(--text-xs);
+    padding: var(--space-xs) var(--space-sm);
+    top: var(--space-sm);
+    left: var(--space-sm);
+  }
+  
+  .book-now-btn {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .car-card {
+    max-width: 300px;
+    aspect-ratio: 1;
+  }
+  
+  .price-tag {
+    font-size: var(--text-xs);
+    padding: var(--space-xs) var(--space-sm);
+    top: var(--space-sm);
+    left: var(--space-sm);
+  }
+  
+  .book-now-btn {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-xs);
+  }
+}
+
+/* Professional Loading and Error States */
+.car-card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.car-card.error {
+  border-color: var(--accent-danger);
+  background: rgba(220, 38, 38, 0.05);
+}

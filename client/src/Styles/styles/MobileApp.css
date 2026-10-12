@@ -1,0 +1,453 @@
+.mobile-app-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.install-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  color: white;
+  z-index: 1000;
+  padding: 12px 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.install-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.install-content span {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.install-btn {
+  background: white;
+  color: #4f46e5;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.install-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dismiss-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 8px;
+}
+
+.mobile-content {
+  padding-top: 0;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .mobile-content {
+    padding-top: 0;
+    min-height: 100vh;
+    background: #f8f9fa;
+  }
+  
+  /* Full-screen mobile layout */
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile navbar - compact and sticky */
+  .navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    padding: 8px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 60px;
+  }
+  
+  .navbar-logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .search-container {
+    flex: 1;
+    margin: 0 10px;
+    max-width: 200px;
+  }
+  
+  .search-input {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .menu-links {
+    display: none; /* Hide in compact navbar */
+  }
+  
+  /* Mobile bottom navigation */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-size: 0.75rem;
+    transition: color 0.3s ease;
+  }
+  
+  .mobile-nav-item.active {
+    color: #4f46e5;
+  }
+  
+  .mobile-nav-icon {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+  
+  /* Main content with proper spacing */
+  .main-content {
+    padding-top: 70px; /* Account for fixed navbar */
+    padding-bottom: 70px; /* Account for bottom nav */
+    min-height: calc(100vh - 140px);
+  }
+  
+  /* Mobile-optimized home page */
+  .home-container {
+    padding: 20px 15px;
+  }
+  
+  .hero-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .hero-subtitle {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Mobile search form */
+  .mobile-search-form {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .search-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .search-field label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .search-field select,
+  .search-field input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #f8f9fa;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-field select:focus,
+  .search-field input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    background: white;
+  }
+  
+  .search-button {
+    width: 100%;
+    min-height: 50px;
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .search-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Mobile car cards */
+  .cars-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 15px;
+  }
+  
+  .car-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+  }
+  
+  .car-card:active {
+    transform: scale(0.98);
+  }
+  
+  .car-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .car-info {
+    padding: 15px;
+  }
+  
+  .car-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .car-price {
+    font-size: 1.1rem;
+    color: #4f46e5;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .car-details {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  /* Touch-friendly buttons */
+  .book-button, .view-button {
+    min-height: 44px;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+  
+  .book-button {
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    color: white;
+    border: none;
+    width: 100%;
+  }
+  
+  .view-button {
+    background: transparent;
+    color: #4f46e5;
+    border: 2px solid #4f46e5;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Mobile modal */
+  .booking-modal {
+    width: 95vw;
+    max-height: 85vh;
+    margin: 7.5vh auto;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .modal-content {
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  /* Error states */
+  .error-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    margin: 20px 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .retry-button {
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  
+  /* Loading states */
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4f46e5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Mobile Features Component */
+  .mobile-features {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .feature-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .feature-btn {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 50px;
+  }
+  
+  .location-btn {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+  }
+  
+  .notification-btn {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    color: white;
+  }
+  
+  .camera-btn {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+    color: white;
+  }
+  
+  .share-btn {
+    background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+    color: white;
+  }
+  
+  .feature-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .feature-btn:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+  
+  .location-info {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 4px solid #4CAF50;
+  }
+  
+  .location-info h4 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .location-info p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+}
