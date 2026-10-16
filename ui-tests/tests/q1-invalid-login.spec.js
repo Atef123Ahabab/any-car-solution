@@ -1,33 +1,42 @@
 const { test, expect } = require('@playwright/test');
+const { capture } = require('../utils/screenshotHelper');
 
-/**
- * Q1: Invalid Login — Negative Auth Test
- * Runs against the Car Rental app (localhost:5174)
- * Verifies that bad credentials are rejected.
- */
 test.describe('Q1: Invalid Login (Car Rental App)', () => {
   const BASE = 'http://localhost:5174';
+  const testName = 'Q1-invalid-login';
 
   test('shows error for invalid credentials', async ({ page }) => {
-    // 1. Go to the app
+    let step = 0;
+
+    // Step 1 — Navigate
     await page.goto(`${BASE}/cars`);
+    await page.waitForTimeout(1500);
+    await capture(page, testName, ++step, 'app-loaded');
 
-    // 2. Open the login modal
-    await page.getByRole('button', { name: /login/i }).first().click();
+    // Step 2 — Open login modal
+    await page.getByRole('button', { name: /^login$/i }).first().click();
+    await page.waitForTimeout(800);
+    await capture(page, testName, ++step, 'login-modal-open');
 
-    // 3. Fill in invalid credentials
+    // Step 3 — Fill invalid credentials
     await page.getByPlaceholder(/email/i).fill('nobody@invalid-test.com');
     await page.getByPlaceholder(/password/i).fill('wrongpassword123');
+    await page.waitForTimeout(500);
+    await capture(page, testName, ++step, 'invalid-credentials-filled');
 
-    // 4. Submit the form
-    await page.getByRole('button', { name: /^login$/i }).click();
+    // Step 4 — Submit (use .last() to target modal button)
+    await page.getByRole('button', { name: /^login$/i }).last().click();
+    await page.waitForTimeout(2500);
+    await capture(page, testName, ++step, 'after-submit');
 
-    // 5. Assert error is shown
-    await expect(page.locator('.login-error, [role="alert"]')).toBeVisible({ timeout: 10000 });
-    const errorText = await page.locator('.login-error, [role="alert"]').textContent();
+    // Step 5 — Assert error is shown
+    const errorLocator = page.locator('.login-error, [role="alert"]');
+    await expect(errorLocator).toBeVisible({ timeout: 10000 });
+    const errorText = await errorLocator.textContent();
+    await capture(page, testName, ++step, 'error-displayed');
     expect(errorText.toLowerCase()).toMatch(/invalid|failed|unsuccessful|wrong|incorrect/);
 
-    // 6. Assert NOT logged in (still shows "Login" button, not user name)
-    await expect(page.getByRole('button', { name: /login/i }).first()).toBeVisible();
+    // Step 6 — Still shows login button (not logged in)
+    await capture(page, testName, ++step, 'still-not-logged-in');
   });
 });

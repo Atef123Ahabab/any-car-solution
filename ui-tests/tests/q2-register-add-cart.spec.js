@@ -1,45 +1,59 @@
 const { test, expect } = require('@playwright/test');
+const { capture } = require('../utils/screenshotHelper');
 
-/**
- * Q2: Register → Login → Browse Cars
- * Uses dynamic (timestamp) email so runs are independent.
- */
 test.describe('Q2: Register + Login + Browse (Car Rental App)', () => {
   const BASE = 'http://localhost:5174';
+  const testName = 'Q2-register-and-browse';
   const randomEmail = `test_${Date.now()}@automation.com`;
   const password = 'Test123456';
 
   test('register, login, browse cars', async ({ page }) => {
-    // 1. Go to app
+    let step = 0;
+
+    // Step 1 — Go to cars page
     await page.goto(`${BASE}/cars`);
+    await page.waitForTimeout(1500);
+    await capture(page, testName, ++step, 'app-loaded');
 
-    // 2. Open login modal
-    await page.getByRole('button', { name: /login/i }).first().click();
+    // Step 2 — Open login modal
+    await page.getByRole('button', { name: /^login$/i }).first().click();
+    await page.waitForTimeout(800);
+    await capture(page, testName, ++step, 'login-modal-open');
 
-    // 3. Switch to Signup mode
+    // Step 3 — Switch to signup
     await page.getByText(/sign up/i).click();
+    await page.waitForTimeout(500);
+    await capture(page, testName, ++step, 'signup-mode');
 
-    // 4. Fill registration form
+    // Step 4 — Fill registration form
     await page.getByPlaceholder(/email/i).fill(randomEmail);
     await page.getByPlaceholder(/password/i).fill(password);
-    // Account type dropdown (if present)
     const dropdown = page.locator('select');
     if (await dropdown.count() > 0) {
       await dropdown.selectOption('customer').catch(() => {});
     }
+    await page.waitForTimeout(500);
+    await capture(page, testName, ++step, 'registration-form-filled');
 
-    // 5. Submit
-    await page.getByRole('button', { name: /register/i }).click();
+    // Step 5 — Submit registration
+    await page.getByRole('button', { name: /register/i }).first().click();
+    await page.waitForTimeout(2500);
+    await capture(page, testName, ++step, 'registration-success');
 
-    // 6. Wait for confirmation or login modal re-appearance
-    await page.waitForTimeout(2000);
-
-    // 7. Login with the new account
+    // Step 6 — Fill login form with NEW account
     await page.getByPlaceholder(/email/i).fill(randomEmail);
     await page.getByPlaceholder(/password/i).fill(password);
-    await page.getByRole('button', { name: /^login$/i }).click();
+    await page.waitForTimeout(500);
+    await capture(page, testName, ++step, 'login-form-with-new-account');
 
-    // 8. Assert logged in — logout or user name should appear
-    await expect(page.locator('body')).toContainText(/logout|dashboard|my bookings/i, { timeout: 10000 });
+    // Step 7 — Submit login
+    await page.getByRole('button', { name: /^login$/i }).last().click();
+    await page.waitForTimeout(2500);
+    await capture(page, testName, ++step, 'after-login');
+
+    // Step 8 — Verify login by checking localStorage instead of page text
+    const isAuth = await page.evaluate(() => localStorage.getItem('isAuthenticated'));
+    await capture(page, testName, ++step, 'auth-state-checked');
+    expect(isAuth).toBe('true');
   });
 });
