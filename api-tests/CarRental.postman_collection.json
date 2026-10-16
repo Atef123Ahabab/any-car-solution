@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "Car Rental API Tests",
+    "description": "API automation tests for the Any Car Solution app",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3000" },
+    { "key": "user_id", "value": "" },
+    { "key": "user_email", "value": "" },
+    { "key": "user_password", "value": "ApiTest123" },
+    { "key": "auth_token", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Step 1 — GET all cars",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/cars"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Response has success:true', () => pm.expect(pm.response.json().success).to.eql(true));",
+              "pm.test('Response has cars array', () => pm.expect(pm.response.json().cars).to.be.an('array'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Step 2 — Register user (dynamic)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"api_user_{{$timestamp}}@test.com\",\n  \"password\": \"{{user_password}}\",\n  \"name\": \"API User\",\n  \"userType\": \"customer\"\n}"
+        },
+        "url": "{{base_url}}/api/auth/register"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200 or 201', () => pm.expect([200,201]).to.include(pm.response.code));",
+              "const json = pm.response.json();",
+              "pm.test('Has user object', () => pm.expect(json.user).to.be.an('object'));",
+              "pm.test('Has token', () => pm.expect(json.token).to.be.a('string'));",
+              "if (json.token) pm.collectionVariables.set('auth_token', json.token);",
+              "if (json.user && json.user._id) pm.collectionVariables.set('user_id', json.user._id);",
+              "if (json.user && json.user.email) pm.collectionVariables.set('user_email', json.user.email);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Step 3 — Login with JUST-REGISTERED user",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{user_email}}\",\n  \"password\": \"{{user_password}}\"\n}"
+        },
+        "url": "{{base_url}}/api/auth/login"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const json = pm.response.json();",
+              "pm.test('Has token', () => pm.expect(json.token).to.be.a('string'));",
+              "pm.test('Returned user _id matches the registered user', () => {",
+              "  pm.expect(json.user._id || json.user.id).to.eql(pm.collectionVariables.get('user_id'));",
+              "});",
+              "if (json.token) pm.collectionVariables.set('auth_token', json.token);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Step 4 — Extract car id (variable chaining demo)",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/cars"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const json = pm.response.json();",
+              "pm.test('cars array exists', () => pm.expect(json.cars).to.be.an('array'));",
+              "if (json.cars.length > 0) {",
+              "  pm.collectionVariables.set('car_id', json.cars[0]._id);",
+              "  console.log('Stored car id:', json.cars[0]._id);",
+              "  pm.test('Car has make and model', () => {",
+              "    pm.expect(json.cars[0]).to.have.property('make');",
+              "    pm.expect(json.cars[0]).to.have.property('model');",
+              "  });",
+              "}"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

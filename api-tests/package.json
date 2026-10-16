@@ -1,0 +1,13 @@
+{
+  "name": "api-tests",
+  "version": "1.0.0",
+  "description": "API automation via Postman + Newman",
+  "scripts": {
+    "test": "newman run CarRental.postman_collection.json",
+    "test:report": "newman run CarRental.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export newman-report.html"
+  },
+  "devDependencies": {
+    "newman": "^6.2.0",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}
