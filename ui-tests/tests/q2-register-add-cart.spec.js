@@ -1,34 +1,45 @@
 const { test, expect } = require('@playwright/test');
-const RegisterPage = require('../pages/RegisterPage');
-const LoginPage = require('../pages/LoginPage');
-const ProductPage = require('../pages/ProductPage');
 
-test('Q2: Register + Add Product to Cart', async ({ page }) => {
-  const registerPage = new RegisterPage(page);
-  const loginPage = new LoginPage(page);
-  const productPage = new ProductPage(page);
+/**
+ * Q2: Register → Login → Browse Cars
+ * Uses dynamic (timestamp) email so runs are independent.
+ */
+test.describe('Q2: Register + Login + Browse (Car Rental App)', () => {
+  const BASE = 'http://localhost:5174';
+  const randomEmail = `test_${Date.now()}@automation.com`;
+  const password = 'Test123456';
 
-  const randomEmail = `user${Date.now()}@test.com`;
+  test('register, login, browse cars', async ({ page }) => {
+    // 1. Go to app
+    await page.goto(`${BASE}/cars`);
 
-  await registerPage.goto();
-  await registerPage.registerUser({
-    firstName: 'John',
-    lastName: 'Doe',
-    email: randomEmail,
-    password: 'Password123!'
+    // 2. Open login modal
+    await page.getByRole('button', { name: /login/i }).first().click();
+
+    // 3. Switch to Signup mode
+    await page.getByText(/sign up/i).click();
+
+    // 4. Fill registration form
+    await page.getByPlaceholder(/email/i).fill(randomEmail);
+    await page.getByPlaceholder(/password/i).fill(password);
+    // Account type dropdown (if present)
+    const dropdown = page.locator('select');
+    if (await dropdown.count() > 0) {
+      await dropdown.selectOption('customer').catch(() => {});
+    }
+
+    // 5. Submit
+    await page.getByRole('button', { name: /register/i }).click();
+
+    // 6. Wait for confirmation or login modal re-appearance
+    await page.waitForTimeout(2000);
+
+    // 7. Login with the new account
+    await page.getByPlaceholder(/email/i).fill(randomEmail);
+    await page.getByPlaceholder(/password/i).fill(password);
+    await page.getByRole('button', { name: /^login$/i }).click();
+
+    // 8. Assert logged in — logout or user name should appear
+    await expect(page.locator('body')).toContainText(/logout|dashboard|my bookings/i, { timeout: 10000 });
   });
-  await expect(page.locator('.result')).toContainText('Your registration completed');
-
-  await loginPage.goto();
-  await loginPage.login(randomEmail, 'Password123!');
-  await expect(page.locator('.account').first()).toContainText(randomEmail);
-
-  await productPage.searchProduct('Laptop');
-  await productPage.openFirstProduct();
-  await productPage.setQuantity(2);
-  await productPage.addToCart();
-
-  await page.goto('/cart');
-  await expect(page.locator('.qty-input')).toHaveValue('2');
-  await expect(page.locator('.product-name')).toContainText('Laptop');
 });
