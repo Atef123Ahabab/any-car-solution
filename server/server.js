@@ -1,4 +1,6 @@
-const express = require('express');
+const express = require("express");
+const dotenv = require("dotenv");
+dotenv.config();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
@@ -70,15 +72,13 @@ const connectDB = async () => {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       // Use the provided MongoDB Atlas connection string
-      const mongoUri = process.env.MONGODB_URI || 
-        "mongodb+srv://ahababatef:atef@123456@cluster0.0piqw84.mongodb.net/carrent?retryWrites=true&w=majority&appName=Cluster0";
+    const mongoUri = process.env.MONGODB_URI;
       
       const options = {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         serverSelectionTimeoutMS: 30000, // 30 seconds
         socketTimeoutMS: 45000, // 45 seconds
-        bufferMaxEntries: 0,
         maxPoolSize: 10,
         minPoolSize: 5,
         maxIdleTimeMS: 30000,

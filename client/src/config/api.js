@@ -1,6 +1,5 @@
-// API configuration for different environments
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? process.env.REACT_APP_API_URL || 'https://your-backend-url.railway.app'  // Production API URL
-  : 'https://carrental-and-service.onrender.com'; // Development API URL
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
 
-export { API_BASE_URL };
+export const API_BASE_URL = API_URL;
+export const API_URL_ALT = API_URL;
+export default API_URL;
