@@ -1,0 +1,108 @@
+
+> api-tests@1.0.0 test
+> newman run CarRental.postman_collection.json
+
+newman
+
+Car Rental API Tests
+
+→ Step 1 — GET all cars
+  GET http://localhost:3000/api/cars [200 OK, 1.23kB, 69ms]
+  ✓  Status 200
+  ✓  Response has success:true
+  ✓  Response has cars array
+
+→ Step 2 — Register user (dynamic)
+  POST http://localhost:3000/api/auth/register [201 Created, 774B, 375ms]
+  ✓  Status 200 or 201
+  ✓  Has user object
+  ✓  Has token
+
+→ Step 3 — Login with JUST-REGISTERED user
+  POST http://localhost:3000/api/auth/login [200 OK, 757B, 316ms]
+  ✓  Status 200
+  ✓  Has token
+  ✓  Returned user _id matches the registered user
+
+→ Step 4 — Extract car id (variable chaining demo)
+  GET http://localhost:3000/api/cars [200 OK, 1.23kB, 55ms]
+  ✓  Status 200
+  ✓  cars array exists
+  ┌
+  │ 'Stored car id:', '6ad283d59746bbb23b623f7b'
+  └
+  ✓  Car has make and model
+
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                  4 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                  4 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                  0 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                 12 │                  0 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 868ms                                         │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 2.82kB (approx)                              │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 203ms [min: 55ms, max: 375ms, s.d.: 143ms] │
+└───────────────────────────────────────────────────────────────────┘
+
+> api-tests@1.0.0 test:report
+> newman run CarRental.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export newman-report.html
+
+newman
+
+Car Rental API Tests
+
+→ Step 1 — GET all cars
+  GET http://localhost:3000/api/cars [200 OK, 1.23kB, 70ms]
+  ✓  Status 200
+  ✓  Response has success:true
+  ✓  Response has cars array
+
+→ Step 2 — Register user (dynamic)
+  POST http://localhost:3000/api/auth/register [201 Created, 774B, 376ms]
+  ✓  Status 200 or 201
+  ✓  Has user object
+  ✓  Has token
+
+→ Step 3 — Login with JUST-REGISTERED user
+  POST http://localhost:3000/api/auth/login [200 OK, 757B, 382ms]
+  ✓  Status 200
+  ✓  Has token
+  ✓  Returned user _id matches the registered user
+
+→ Step 4 — Extract car id (variable chaining demo)
+  GET http://localhost:3000/api/cars [200 OK, 1.23kB, 50ms]
+  ✓  Status 200
+  ✓  cars array exists
+  ┌
+  │ 'Stored car id:', '6ad283d59746bbb23b623f7b'
+  └
+  ✓  Car has make and model
+
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                  4 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                  4 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                  0 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                 12 │                  0 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 936ms                                         │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 2.82kB (approx)                              │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 219ms [min: 50ms, max: 382ms, s.d.: 159ms] │
+└───────────────────────────────────────────────────────────────────┘

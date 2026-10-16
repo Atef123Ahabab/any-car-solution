@@ -1,0 +1,21 @@
+* d938530 (HEAD -> main, origin/main, origin/HEAD) ci: add GitHub Actions workflow for API tests
+*   5fca0c6 Merge API tests
+|\  
+| * ed96a9e (origin/feature/api-tests, feature/api-tests) test(api): add Postman collection with variable chaining and Newman CLI
+* |   24fbb67 Merge Q3 E2E test
+|\ \  
+| * | 75c800c (origin/feature/q3-e2e-checkout, feature/q3-e2e-checkout) test(q3): rewrite E2E flow for car rental app
+| |/  
+* |   3dd868f Merge Q2 register flow test
+|\ \  
+| * | 215df13 (origin/feature/q2-register-add-cart, feature/q2-register-add-cart) test(q2): rewrite register+login+browse flow for car rental
+| |/  
+* / 7c7bd1b docs(test): add testing section to README and package.json scripts
+|/  
+* cdb6385 test(q1): rewrite invalid login test for car rental app
+* 9969970 fix(env): point client API to localhost:3000, fix MongoDB URI
+* 1556638 (origin/feature/q1-invalid-login, feature/q1-invalid-login) feat: add Playwright UI automation framework with POM structure
+* 9a576bb Add comprehensive README
+* 056df86 Remove node_modules and uploads from Git tracking
+* 6bb4fe7 Add .gitignore
+* 3a3affe Initial commit connecting VS Code project

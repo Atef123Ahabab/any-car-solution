@@ -1,0 +1,32 @@
+=== UI Tests ===
+total 24
+drwxr-xr-x@  5 atefahabab  staff   160 Oct 17 02:16 .
+drwxr-xr-x@ 11 atefahabab  staff   352 Oct 17 00:17 ..
+-rw-r--r--@  1 atefahabab  staff  1299 Oct 17 02:11 q1-invalid-login.spec.js
+-rw-r--r--@  1 atefahabab  staff  1609 Oct 17 02:16 q2-register-add-cart.spec.js
+-rw-r--r--@  1 atefahabab  staff  1140 Oct 17 02:16 q3-e2e-checkout.spec.js
+
+=== Page Objects ===
+total 32
+drwxr-xr-x@  6 atefahabab  staff   192 Oct 17 00:16 .
+drwxr-xr-x@ 11 atefahabab  staff   352 Oct 17 00:17 ..
+-rw-r--r--@  1 atefahabab  staff   447 Oct 17 00:16 CartPage.js
+-rw-r--r--@  1 atefahabab  staff   643 Oct 17 00:16 LoginPage.js
+-rw-r--r--@  1 atefahabab  staff  1079 Oct 17 00:16 ProductPage.js
+-rw-r--r--@  1 atefahabab  staff   893 Oct 17 00:16 RegisterPage.js
+
+=== API Tests ===
+total 400
+drwxr-xr-x@   7 atefahabab  staff     224 Oct 17 02:16 .
+drwxrwxr-x@  18 atefahabab  staff     576 Oct 17 02:22 ..
+-rw-r--r--@   1 atefahabab  staff    4349 Oct 17 02:16 CarRental.postman_collection.json
+-rw-r--r--@   1 atefahabab  staff  106402 Oct 17 02:16 newman-report.html
+drwxr-xr-x@ 176 atefahabab  staff    5632 Oct 17 02:14 node_modules
+-rw-r--r--@   1 atefahabab  staff   84301 Oct 17 02:16 package-lock.json
+-rw-r--r--@   1 atefahabab  staff     409 Oct 17 02:16 package.json
+
+=== CI Workflow ===
+total 8
+drwxr-xr-x@ 3 atefahabab  staff    96 Oct 17 02:21 .
+drwxr-xr-x@ 3 atefahabab  staff    96 Oct 17 02:21 ..
+-rw-r--r--@ 1 atefahabab  staff  1106 Oct 17 02:21 tests.yml

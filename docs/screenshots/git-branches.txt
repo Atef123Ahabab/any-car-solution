@@ -1,0 +1,11 @@
+  feature/api-tests
+  feature/q1-invalid-login
+  feature/q2-register-add-cart
+  feature/q3-e2e-checkout
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/feature/api-tests
+  remotes/origin/feature/q1-invalid-login
+  remotes/origin/feature/q2-register-add-cart
+  remotes/origin/feature/q3-e2e-checkout
+  remotes/origin/main

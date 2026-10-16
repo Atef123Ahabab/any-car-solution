@@ -1,0 +1,60 @@
+{
+    "success": true,
+    "cars": [
+        {
+            "pricing": {
+                "dailyRate": 50,
+                "weeklyRate": 300,
+                "monthlyRate": 1000,
+                "currency": "USD"
+            },
+            "availability": {
+                "isAvailable": true,
+                "availableFrom": "2026-10-01T00:00:00.000Z",
+                "availableUntil": "2027-01-01T00:00:00.000Z",
+                "unavailableDates": []
+            },
+            "specifications": {
+                "engine": {
+                    "type": "2.5L I4",
+                    "horsepower": 203
+                },
+                "transmission": "Automatic",
+                "fuelType": "Petrol",
+                "drivetrain": "FWD"
+            },
+            "dimensions": {
+                "seats": 5,
+                "doors": 4,
+                "luggage": 3
+            },
+            "location": {
+                "address": "123 Main Street",
+                "city": "Dhaka",
+                "state": "Dhaka",
+                "zipCode": "1200"
+            },
+            "_id": "6ad283d59746bbb23b623f7b",
+            "make": "Toyota",
+            "model": "Camry",
+            "year": 2024,
+            "type": "Sedan",
+            "ownerId": "6ad281d89746bbb23b623edd",
+            "images": [
+                {
+                    "url": "/uploads/cars/toyota-camry.png",
+                    "alt": "Toyota Camry",
+                    "isPrimary": true,
+                    "_id": "6ad283d59746bbb23b623f7c"
+                }
+            ],
+            "description": "A reliable sedan for city and highway driving",
+            "condition": "Excellent",
+            "mileage": 15000,
+            "licensePlate": "DHA-GA-1234",
+            "status": "available",
+            "__v": 0
+        }
+    ],
+    "count": 1
+}

@@ -1,0 +1,10 @@
+d938530 ci: add GitHub Actions workflow for API tests
+5fca0c6 Merge API tests
+24fbb67 Merge Q3 E2E test
+ed96a9e test(api): add Postman collection with variable chaining and Newman CLI
+3dd868f Merge Q2 register flow test
+75c800c test(q3): rewrite E2E flow for car rental app
+cdb6385 test(q1): rewrite invalid login test for car rental app
+7c7bd1b docs(test): add testing section to README and package.json scripts
+215df13 test(q2): rewrite register+login+browse flow for car rental
+9969970 fix(env): point client API to localhost:3000, fix MongoDB URI
