@@ -1,0 +1,48 @@
+name: Automated Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-tests:
+    name: API Tests (Newman)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install server deps
+        working-directory: ./server
+        run: npm install
+
+      - name: Start server in background
+        working-directory: ./server
+        run: |
+          echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" > .env
+          echo "JWT_SECRET=test_secret_key_for_ci" >> .env
+          echo "PORT=3000" >> .env
+          node server.js &
+          sleep 8
+
+      - name: Install API test deps
+        working-directory: ./api-tests
+        run: npm install
+
+      - name: Run Newman tests
+        working-directory: ./api-tests
+        run: npm run test:report
+
+      - name: Upload Newman report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: newman-report
+          path: api-tests/newman-report.html
